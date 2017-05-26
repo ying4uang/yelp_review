@@ -1,6 +1,5 @@
 from app import app
 from flask import g, Flask, jsonify, render_template, request, redirect, Response, url_for
-from redis import StrictRedis
 from lxml import html
 from lxml import etree
 import requests

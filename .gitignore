@@ -1,5 +1,9 @@
 instance/*
 tmp
 app/*.pyc
+app/*.swo
+app/*.swp
+template/*.swo
+template/*.swp
 .DS_Store
-
+*.pyc
