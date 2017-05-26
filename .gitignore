@@ -1,0 +1,5 @@
+instance/*
+tmp
+app/*.pyc
+.DS_Store
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<title>Pizzara</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='w3.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
+<style>
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-large">
+    <div class="w3-col s3">
+      <a href="#" class="w3-btn-block w3-light-grey">Home</a>
+    </div>
+
+    <div class="w3-col s3">
+      <a href="#about" class="w3-btn-block w3-light-grey">About</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#contact" class="w3-btn-block w3-light-grey">Contact</a>
+    </div>
+    
+    <div class="w3-col s3">
+      <a href="#" class="w3-btn-block w3-light-grey">Order</a>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
+<form name = "search" action="create" method="POST" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+<h2 class="w3-center">Welcome to Pizzara</h2>
+ 
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:150px">Restaurant Name:</div>
+    <div class="w3-rest">
+      <input class="w3-input w3-border" name="cname" type="text" placeholder="Lombardi's Pizza">
+    </div>
+</div>
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:150px">Number of Reviews(between 1 and 10):</div>
+    <div class="w3-rest">
+      <input class="w3-input w3-border" name="ctarget" type="text" placeholder="9">
+    </div>
+</div>
+
+<button class="w3-btn-block w3-section w3-blue w3-ripple w3-padding">Submit</button>
+
+</form>
+
+
+
+</div>
+
+<!-- Footer -->
+
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  
+</footer>
+
+
+<script>
+
+$(function() {
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+  $("form[name='search']").validate({
+    // Specify validation rules
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+      cname: "required",
+      ctarget: {
+        required: true,
+        number: true,
+        min: 1,
+        max: 10
+      }
+    },
+    // Specify validation error messages
+    messages: {
+      cname: "Please enter your a restaurant name",
+      ctarget: "Please enter the number of reviews(1-10)",
+    },
+    // Make sure the form is submitted to the destination defined
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
+

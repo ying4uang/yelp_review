@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<title>Coupio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='w3.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<style>
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.button {
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 12px 28px;
+}
+
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-large">
+    <div class="w3-col s3">
+      <a href="http://www.coupio.us" class="w3-btn-block w3-light-grey">Home</a>
+    </div>
+
+    <div class="w3-col s3">
+      <a href="#Partner" class="w3-btn-block w3-light-grey">Partner</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#contact" class="w3-btn-block w3-light-grey">About</a>
+    </div>
+    
+    <div class="w3-col s3">
+      <a href="#contact" class="w3-btn-block w3-light-grey">Order</a>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div id ="reviews_table" class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
+  <div class="w3-panel">
+    <h1><b>{{rname}}</b></h1>
+    <h2>average rating :{{rating}}</h2>
+  </div>
+    
+   <div>
+    
+    <li>
+{% for val in rev %}
+   <ul>
+        {{ val }} 
+       
+   </ul>
+{% endfor %}
+</li>
+     
+
+
+   </div>
+
+</div>
+
+
+
+
+
+<!-- Footer -->
+
+
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  
+</footer>
+
+
+<script>
+
+</script>
+
+</body>
+</html>
+
